@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Content & Forms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    header, main, footer {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    fieldset {
+      margin-bottom: 15px;
+      border: 1px solid #bbb;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 7px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+    button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #1c5980;
+    }
+    .media-container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Enhanced HTML5 Content & Forms Made by Mintesnot Leliso</h1>
+    <p>Practicing lists, tables, media embedding, and accessible, validated forms.</p>
+  </header>
+
+  <main>
+    <!-- Lists Section -->
+    <section>
+      <h2>Lists Example</h2>
+      <p>Here are some favorite fruits (unordered list):</p>
+      <ul>
+        <li>Mango</li>
+        <li>Banana</li>
+        <li>Apple</li>
+      </ul>
+
+      <p>Steps to register for an event (ordered list):</p>
+      <ol>
+        <li>Fill out the registration form below.</li>
+        <li>Submit the form.</li>
+        <li>Check your email for confirmation.</li>
+      </ol>
+    </section>
+
+    <!-- Table Section -->
+    <section>
+      <h2>Table Example</h2>
+      <p>Event Schedule:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00 AM</td>
+            <td>Opening Ceremony</td>
+            <td>Main Hall</td>
+          </tr>
+          <tr>
+            <td>10:00 AM</td>
+            <td>Workshop: HTML Basics</td>
+            <td>Room 101</td>
+          </tr>
+          <tr>
+            <td>12:00 PM</td>
+            <td>Lunch Break</td>
+            <td>Cafeteria</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Media Section -->
+    <section>
+      <h2>Media Embedding</h2>
+      <div class="media-container">
+        <p>Sample Image:</p>
+        <img src="#" alt="Sample image" width="100%" />
+      </div>
+      <div class="media-container">
+        <p>Sample Video:</p>
+        <video controls width="100%">
+          <source src="" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section>
+      <h2>Registration Form</h2>
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fullname">Full Name <sup>*</sup></label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+            minlength="3"
+            autocomplete="name"
+          />
+
+          <label for="email">Email Address <sup>*</sup></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@example.com"
+            required
+            autocomplete="email"
+          />
+
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+251 9XXXXXXXX"
+            pattern="^\+251\s9\d{8}$"
+            autocomplete="tel"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Account Details</legend>
+
+          <label for="username">Username <sup>*</sup></label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Choose a username"
+            required
+            minlength="5"
+            pattern="^[a-zA-Z0-9_-]{5,}$"
+            autocomplete="username"
+          />
+
+          <label for="password">Password <sup>*</sup></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="At least 8 characters"
+            required
+            minlength="8"
+          />
+
+          <label for="confirm-password">Confirm Password <sup>*</sup></label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Re-enter your password"
+            required
+            minlength="8"
+            readonly
+            onfocus="this.removeAttribute('readonly');"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+
+          <label for="newsletter">
+            <input type="checkbox" id="newsletter" name="newsletter" />
+            Subscribe to newsletter
+          </label>
+
+          <label for="country">Country <sup>*</sup></label>
+          <select id="country" name="country" required autocomplete="country-name">
+            <option value="">-- Select your country --</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Other">Other</option>
+          </select>
+        </field
